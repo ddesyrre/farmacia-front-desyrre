@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router'
 import Categoria from '../../../models/Categoria'
-import { buscar, deletar } from '../../../services/Service'
+import { buscar, deletar } from '../../../service/Service'
 
 
 function DeletarCategoria() {
@@ -18,7 +18,7 @@ function DeletarCategoria() {
             alert (error)
             }
         }
-    }
+
 
     useEffect(() => {
         if (id !== undefined) {
@@ -42,14 +42,15 @@ function DeletarCategoria() {
 
         retornar()
     }
+
     return (
         <div className='container w-1/3 mx-auto'>
             <h1 className='text-4xl text-center my-4'>Deletar categoria</h1>
 
-            <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar a categoria a seguir?</p>
+            <p className='text-center font-semibold mb-4'>Deseja apagar a categoria?</p>
 
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Categoria</header>
+                <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>{Categoria.nome}</header>
                 <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.descricao}</p>
                 <div className="flex">
                     <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
