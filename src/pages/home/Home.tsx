@@ -1,5 +1,8 @@
 import React from 'react';
-import './Home.css';
+import NavBar from '../../components/navbar/NavBar'
+import Footer from '../../components/footer/Footer'
+import ListaCategoria from '../../components/categoria/listaCategorias/ListaCategorias'
+
 
 
 function Home() {
@@ -23,6 +26,9 @@ function Home() {
                 </div>
             </div>
 
+
+
+            <ListaCategoria/>
         </>
     );
 }
